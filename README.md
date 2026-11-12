@@ -70,6 +70,16 @@ Completa los datos solicitados en la terminal. Después inicia sesión desde la 
 - `transporter`: transporte.
 - `establishment`: recepción y almacenamiento.
 
+## Usuarios de prueba
+
+Para probar el sistema, usa estas cuentas (o regístralas desde la pantalla de registro):
+
+| Nombre | Correo | Rol | Contraseña |
+| --- | --- | --- | --- |
+| Juan Carlos Jimenez Santos | juan.carlos@empresa.com | admin | juanCarlos123 |
+| Carla Andrea Quispe Galarte | carla.quispe@empresa.com | producer | carla.quispe333 |
+
+
 ## Prueba rápida
 1. Crea el administrador con el script.
 2. Inicia sesión.
