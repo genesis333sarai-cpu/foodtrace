@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#102b24"/>
+  <title>FoodTrace | Trazabilidad alimentaria</title>
+
+  <script>
+    function mostrarError(msg) {
+      var d = document.createElement('pre');
+      d.style.cssText = 'white-space:pre-wrap;padding:12px;margin:0;color:#b00;background:#fff;font-size:13px;position:fixed;inset:0;z-index:99999;overflow:auto';
+      d.textContent = msg;
+      document.body.appendChild(d);
+    }
+    window.addEventListener('error', function (e) {
+      mostrarError('ERROR: ' + e.message + '\n' + (e.filename || '') + ':' + (e.lineno || ''));
+    });
+    window.addEventListener('unhandledrejection', function (e) {
+      mostrarError('PROMESA: ' + (e.reason && e.reason.message ? e.reason.message : e.reason));
+    });
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var r = document.getElementById('root');
+        if (r && r.children.length === 0) {
+          mostrarError('React no pintó nada.\nURL: ' + location.href + '\nVITE_API_URL no se muestra aquí; revisa Network en la PC.');
+        }
+      }, 3000);
+    });
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
