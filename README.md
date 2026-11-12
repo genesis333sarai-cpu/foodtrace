@@ -17,7 +17,7 @@ Sistema web de trazabilidad alimentaria basado en el documento del Proyecto Inte
 - MongoDB local o cuenta MongoDB Atlas
 
 ## Instalación
-git clone https://github.com/TU_USUARIO/foodtrace.git
+git clone https://github.com/genesis333sarai-cpu/foodtrace.git 
 cd foodtrace
 
 ## Instalación en Windows (PowerShell)
