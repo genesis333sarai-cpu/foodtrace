@@ -1,0 +1,14 @@
+{
+  "name": "foodtrace-gateway",
+  "version": "1.0.0",
+  "description": "API Gateway de FoodTrace (prototipo de la materia Arquitectura de Software). Sin dependencias externas.",
+  "private": true,
+  "main": "src/gateway.js",
+  "engines": { "node": ">=18.2.0" },
+  "scripts": {
+    "start": "node src/gateway.js",
+    "mocks": "node src/mock-services.js",
+    "test": "node test/run-tests.js",
+    "bench": "node test/overhead.js"
+  }
+}

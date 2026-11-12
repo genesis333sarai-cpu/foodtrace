@@ -1,0 +1,197 @@
+{
+  "date": "2026-11-12T12:19:36.652Z",
+  "node": "v22.23.4",
+  "results": [
+    {
+      "id": "QG-01",
+      "desc": "Solicitudes no autorizadas rechazadas en el Gateway (220/220)",
+      "ok": true,
+      "detail": "100.0 %"
+    },
+    {
+      "id": "QG-01",
+      "desc": "Ninguna solicitud rechazada llegó a un servicio interno",
+      "ok": true,
+      "detail": "solicitudes recibidas por servicios: 0"
+    },
+    {
+      "id": "QG-01",
+      "desc": "Rol permitido (productor) crea lote y el servicio recibe x-user / x-role",
+      "ok": true,
+      "detail": "status 201"
+    },
+    {
+      "id": "QG-01",
+      "desc": "Cabeceras x-role / x-user enviadas por el cliente son descartadas",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "QG-01",
+      "desc": "Consulta pública por QR no exige token",
+      "ok": true,
+      "detail": "status 200"
+    },
+    {
+      "id": "QG-01",
+      "desc": "Login sin token y /auth/me con el token emitido por el servicio",
+      "ok": true,
+      "detail": "login 200, me 200"
+    },
+    {
+      "id": "CORS",
+      "desc": "El Gateway reemplaza el CORS del servicio interno por su origen permitido",
+      "ok": true,
+      "detail": "http://localhost:5173"
+    },
+    {
+      "id": "CORS",
+      "desc": "Preflight OPTIONS responde 204 sin consultar servicios",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "TA-04",
+      "desc": "Auditoría: una entrada por cada solicitud atendida",
+      "ok": true,
+      "detail": "226 entradas / 226 solicitudes"
+    },
+    {
+      "id": "TA-04",
+      "desc": "La auditoría registra usuario, rol, servicio y estado",
+      "ok": true,
+      "detail": "{\"ts\":\"2026-11-12T12:19:35.397Z\",\"id\":\"8718e231-2ab3-4f5d-9135-a79ad4288481\",\"ip\":\"127.0.0.1\",\"method\":\"POST\",\"path\":\"/api/batches\",\"status\":403,\"user\":\"user-transporter\",\"role\":\"transporter\",\"service\":\"trace\",\"cache\":\"-\",\"ms\":1}"
+    },
+    {
+      "id": "QG-02",
+      "desc": "Aciertos de caché sobre un mismo lote (99/100)",
+      "ok": true,
+      "detail": "99.0 % (meta: 95 %)"
+    },
+    {
+      "id": "QG-02",
+      "desc": "El Servicio de Trazabilidad recibió una sola consulta",
+      "ok": true,
+      "detail": "consultas al servicio: 1"
+    },
+    {
+      "id": "QG-02",
+      "desc": "Respuesta desde caché más rápida que desde el servicio",
+      "ok": true,
+      "detail": "MISS 31.5 ms, HIT 1.1 ms"
+    },
+    {
+      "id": "QG-02",
+      "desc": "Las respuestas de error (404) no se guardan en caché",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "QG-02",
+      "desc": "Pasado el TTL la caché se renueva consultando al servicio",
+      "ok": true,
+      "detail": "consultas al servicio: 2"
+    },
+    {
+      "id": "QG-03",
+      "desc": "Servicio de Trazabilidad caído: el Gateway responde 503 controlado",
+      "ok": true,
+      "detail": "status 503, 3 ms"
+    },
+    {
+      "id": "QG-03",
+      "desc": "Login, QR y salud siguen respondiendo",
+      "ok": true,
+      "detail": "login 200, qr 200, health 200"
+    },
+    {
+      "id": "QG-03",
+      "desc": "Lote ya consultado se sirve desde caché (STALE) con el servicio caído",
+      "ok": true,
+      "detail": "status 200, x-cache STALE"
+    },
+    {
+      "id": "QG-03",
+      "desc": "Lote no cacheado devuelve 503 controlado",
+      "ok": true,
+      "detail": "status 503"
+    },
+    {
+      "id": "QG-03",
+      "desc": "Servicio que no responde: 503 al agotarse el tiempo de espera (300 ms)",
+      "ok": true,
+      "detail": "status 503, 305 ms"
+    },
+    {
+      "id": "TA-04",
+      "desc": "Límite de solicitudes por IP: 30 atendidas y 5 rechazadas con 429 y Retry-After",
+      "ok": true,
+      "detail": "retry-after 60 s"
+    },
+    {
+      "id": "AQ-05",
+      "desc": "Ruta nueva expuesta agregando una sola regla al Gateway (sin cambiar el cliente)",
+      "ok": true,
+      "detail": "antes 404, después 200"
+    },
+    {
+      "id": "QG-03",
+      "desc": "El proceso del Gateway no sufrió excepciones sin capturar durante toda la prueba",
+      "ok": true,
+      "detail": "excepciones: 0"
+    }
+  ],
+  "metrics": {
+    "qg01": {
+      "total": 220,
+      "rejectedCorrectly": 220,
+      "rate": 1,
+      "reachedServices": 0,
+      "byLabel": {
+        "sin token": {
+          "total": 80,
+          "ok": 80
+        },
+        "firma inválida": {
+          "total": 40,
+          "ok": 40
+        },
+        "token vencido": {
+          "total": 20,
+          "ok": 20
+        },
+        "alg none": {
+          "total": 20,
+          "ok": 20
+        },
+        "token basura": {
+          "total": 20,
+          "ok": 20
+        },
+        "rol sin permiso": {
+          "total": 40,
+          "ok": 40
+        }
+      }
+    },
+    "audit": {
+      "entries": 226,
+      "requests": 226
+    },
+    "qg02": {
+      "requests": 100,
+      "hits": 99,
+      "hitRate": 0.99,
+      "upstreamQueries": 1,
+      "avgMissMs": 31.453229999999962,
+      "avgHitMs": 1.0616331212121222
+    },
+    "qg03": {
+      "failingRouteStatus": 503,
+      "failFastMs": 2.9135479999999916,
+      "otherRoutesOk": 4,
+      "otherRoutesTotal": 4,
+      "timeoutMs": 304.5840489999998
+    }
+  }
+}

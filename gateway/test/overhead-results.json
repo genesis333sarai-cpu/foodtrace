@@ -1,0 +1,8 @@
+{
+  "requests": 400,
+  "directMedianMs": 1.92,
+  "gatewayMedianMs": 2.5,
+  "directP95Ms": 3.22,
+  "gatewayP95Ms": 5.27,
+  "overheadMedianMs": 0.58
+}
