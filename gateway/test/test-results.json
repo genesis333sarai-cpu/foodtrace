@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-12T12:19:36.652Z",
-  "node": "v22.23.4",
+  "date": "2026-11-15T02:58:52.277Z",
+  "node": "v24.16.0",
   "results": [
     {
       "id": "QG-01",
@@ -60,7 +60,7 @@
       "id": "TA-04",
       "desc": "La auditoría registra usuario, rol, servicio y estado",
       "ok": true,
-      "detail": "{\"ts\":\"2026-11-12T12:19:35.397Z\",\"id\":\"8718e231-2ab3-4f5d-9135-a79ad4288481\",\"ip\":\"127.0.0.1\",\"method\":\"POST\",\"path\":\"/api/batches\",\"status\":403,\"user\":\"user-transporter\",\"role\":\"transporter\",\"service\":\"trace\",\"cache\":\"-\",\"ms\":1}"
+      "detail": "{\"ts\":\"2026-11-15T02:58:50.781Z\",\"id\":\"f2400473-b413-4388-a8d6-f3205791882e\",\"ip\":\"127.0.0.1\",\"method\":\"POST\",\"path\":\"/api/batches\",\"status\":403,\"user\":\"user-transporter\",\"role\":\"transporter\",\"service\":\"trace\",\"cache\":\"-\",\"ms\":1}"
     },
     {
       "id": "QG-02",
@@ -78,7 +78,7 @@
       "id": "QG-02",
       "desc": "Respuesta desde caché más rápida que desde el servicio",
       "ok": true,
-      "detail": "MISS 31.5 ms, HIT 1.1 ms"
+      "detail": "MISS 54.6 ms, HIT 1.0 ms"
     },
     {
       "id": "QG-02",
@@ -96,7 +96,7 @@
       "id": "QG-03",
       "desc": "Servicio de Trazabilidad caído: el Gateway responde 503 controlado",
       "ok": true,
-      "detail": "status 503, 3 ms"
+      "detail": "status 503, 7 ms"
     },
     {
       "id": "QG-03",
@@ -120,7 +120,7 @@
       "id": "QG-03",
       "desc": "Servicio que no responde: 503 al agotarse el tiempo de espera (300 ms)",
       "ok": true,
-      "detail": "status 503, 305 ms"
+      "detail": "status 503, 326 ms"
     },
     {
       "id": "TA-04",
@@ -183,15 +183,15 @@
       "hits": 99,
       "hitRate": 0.99,
       "upstreamQueries": 1,
-      "avgMissMs": 31.453229999999962,
-      "avgHitMs": 1.0616331212121222
+      "avgMissMs": 54.62969999999996,
+      "avgHitMs": 1.0194414141414132
     },
     "qg03": {
       "failingRouteStatus": 503,
-      "failFastMs": 2.9135479999999916,
+      "failFastMs": 6.735899999999901,
       "otherRoutesOk": 4,
       "otherRoutesTotal": 4,
-      "timeoutMs": 304.5840489999998
+      "timeoutMs": 326.30510000000004
     }
   }
 }
