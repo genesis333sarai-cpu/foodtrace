@@ -52,7 +52,7 @@ const port=process.env.PORT||5000;
 connectDB().then(async()=>{
  for(const c of [{name:'Frutas y verduras',description:'Productos agrícolas frescos'},{name:'Productos lácteos',description:'Leche y derivados'},{name:'Alimentos procesados',description:'Alimentos transformados'}])
   await Category.updateOne({name:c.name},{$setOnInsert:c},{upsert:true});
- app.listen(port, '127.0.0.1', () => {
-  console.log(`FoodTrace API (solo local): http://127.0.0.1:${port}`);
+ app.listen(port, '0.0.0.0', () => {
+  console.log(`FoodTrace API disponible en el puerto ${port}`);
 });
 }).catch(e=>{console.error('No se pudo iniciar:',e.message);process.exit(1);});
