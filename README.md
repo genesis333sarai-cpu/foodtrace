@@ -84,8 +84,9 @@ Para probar el sistema, usa estas cuentas (o regístralas desde la pantalla de r
 | --- | --- | --- | --- |
 | Juan Carlos Jimenez Santos | juan.carlos@empresa.com | admin | juanCarlos123 |
 | Carla Andrea Quispe Galarte | carla.quispe@empresa.com | producer | carla.quispe333 |
-
-
+| Isidro Choque               | isidro.choque@empresa.com|  procesador  | isidro.choque123 |
+| Sandra Condori              | sandra.condori@empresa.com | transportista  | sandra.condori333 |
+| Hanna Llanos Quispe         | hanna.llanos@empresa.com   |  establecimiento  | hanna.llanos222 |
 ## Prueba rápida
 1. Crea el administrador con el script.
 2. Inicia sesión.
