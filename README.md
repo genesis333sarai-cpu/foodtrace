@@ -20,6 +20,12 @@ Sistema web de trazabilidad alimentaria basado en el documento del Proyecto Inte
 git clone https://github.com/genesis333sarai-cpu/foodtrace.git 
 cd foodtrace
 
+## Docker Desktop
+- iniciar: docker compose build
+           docker compose up -d
+
+- detener: docker compose down
+
 ## Instalación en Windows (PowerShell)
 1. Extrae el ZIP.
 2. Abre la carpeta `FoodTrace` en VS Code.
